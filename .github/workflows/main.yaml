@@ -23,7 +23,9 @@ jobs:
             sudo git pull
             sudo composer update --optimize-autoloader --no-dev
             sudo composer install --no-interaction --prefer-dist --optimize-autoloader
+            sudo composer require fruitcake/laravel-cors
             sudo composer dump-autoload
+            sudo php artisan vendor:publish --provider="Fruitcake\Cors\ServiceProvider"
             sudo php artisan key:generate
             sudo php artisan cache:clear
             sudo php artisan view:clear
