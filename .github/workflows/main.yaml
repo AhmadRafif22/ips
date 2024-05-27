@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: chekcout repo
         uses: actions/checkout@v2
-      - name: Set Git safe directory
-        run: git config --global --add safe.directory /var/www/ips
+      # - name: Set Git safe directory
+      #   run: git config --global --add safe.directory /var/www/ips
       - name: deploy to server
         uses: appleboy/ssh-action@master
         with:
