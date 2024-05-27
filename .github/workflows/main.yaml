@@ -20,12 +20,12 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/ips
-            git pull
-            composer update --optimize-autoloader --no-dev
-            composer install --no-interaction --prefer-dist --optimize-autoloader
-            composer dump-autoload
-            php artisan key:generate
-            php artisan cache:clear
-            php artisan view:clear
-            php artisan config:clear
-            php artisan optimize
+            sudo git pull
+            sudo composer update --optimize-autoloader --no-dev
+            sudo composer install --no-interaction --prefer-dist --optimize-autoloader
+            sudo composer dump-autoload
+            sudo php artisan key:generate
+            sudo php artisan cache:clear
+            sudo php artisan view:clear
+            sudo php artisan config:clear
+            sudo php artisan optimize
