@@ -20,7 +20,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/ips
-            sudo git pull
+            git config --global --add safe.directory /var/www/ips
+            sudo git pull origin main
             sudo composer update --optimize-autoloader --no-dev
             sudo composer install --no-interaction --prefer-dist --optimize-autoloader
             sudo composer dump-autoload
