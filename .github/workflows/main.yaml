@@ -1,0 +1,31 @@
+name: automation deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy_main:
+    name: Deploy to main server
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: chekcout repo
+        uses: actions/checkout@v2
+      - name: deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd /var/www/ips
+            git pull
+            composer update --optimize-autoloader --no-dev
+            composer install --no-interaction --prefer-dist --optimize-autoloader
+            composer dump-autoload
+            php artisan key:generate
+            php artisan cache:clear
+            php artisan view:clear
+            php artisan config:clear
+            php artisan optimize
