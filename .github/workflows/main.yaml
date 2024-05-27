@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: chekcout repo
         uses: actions/checkout@v2
+      - name: Set Git safe directory
+        run: git config --global --add safe.directory /var/www/ips
       - name: deploy to server
         uses: appleboy/ssh-action@master
         with:
@@ -20,7 +22,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/ips
-            git config --global --add safe.directory /var/www/ips
             sudo git pull origin main
             sudo composer update --optimize-autoloader --no-dev
             sudo composer install --no-interaction --prefer-dist --optimize-autoloader
