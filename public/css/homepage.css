@@ -1,0 +1,179 @@
+html,
+body {
+    background-color: #ebebeb;
+}
+
+/* header */
+.search-box {
+    background-color: #acb0c2;
+    width: 30% !important;
+}
+
+.header-container {
+    padding-bottom: 10px !important;
+    border-bottom: 10px solid #d9d9d9 !important;
+    width: 68% !important;
+}
+
+.login-btn {
+    background-color: #acb0c2;
+    cursor: pointer !important;
+}
+/* header End */
+
+/* peta */
+.denah-title {
+    color: #4455a2;
+}
+
+.peta-container {
+    border: 5px solid black;
+    content: "";
+}
+
+.kelas-tengah {
+    border-top: 2px solid black;
+    content: "";
+}
+
+.kelas-tengah-bawah {
+    border-bottom: 2px solid black;
+    content: "";
+}
+
+.kelas {
+    border: 2px solid black;
+    content: "";
+    height: 100px !important;
+    cursor: pointer;
+    background-color: #fbecb3;
+    opacity: 0.9;
+}
+
+/* -- modal peta -- */
+.modal-card {
+    background-color: #e1e1e1;
+}
+.modal-img {
+    width: 75px;
+}
+.modal-img-search {
+    width: 75px;
+}
+/* -- modal peta -- */
+
+.search-box,
+.header-container {
+    position: absolute;
+    z-index: 1;
+}
+
+.search-box {
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.search-trigger {
+    cursor: pointer;
+}
+
+.search-btn {
+    background-color: white !important;
+    border: none !important;
+}
+
+.search-box-container {
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.search-result-container {
+    overflow-y: auto;
+    max-height: 400px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.search-result-container::-webkit-scrollbar {
+    display: none;
+}
+
+.header-container {
+    right: 0;
+}
+
+.peta-container-wrap {
+    margin-top: 100px !important;
+}
+
+/* peta end */
+
+/* ================== RESPONSIVE ================== */
+@media only screen and (max-width: 767px) {
+    .header-container-box {
+        flex-direction: column-reverse !important;
+    }
+
+    .search-box,
+    .header-container {
+        position: relative !important;
+        width: 100% !important;
+    }
+
+    .header-container {
+        margin-bottom: 30px !important;
+    }
+
+    .header-content {
+        flex-direction: column !important;
+    }
+
+    .header-img-jti {
+        width: 40px !important;
+        height: 40px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .login-btn {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+    }
+
+    .header-text {
+        padding: 0 !important;
+    }
+
+    /* peta */
+
+    .peta-container-wrap {
+        margin-top: 0px !important;
+    }
+
+    .peta-container-box {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .ruang-atas {
+        margin-bottom: 30px !important;
+    }
+
+    .kelas {
+        height: 60px !important;
+        overflow: hidden !important;
+        padding: 2px !important;
+    }
+
+    .kelas-tengah,
+    .kelas-tengah-bawah {
+        width: 50px !important;
+    }
+
+    .peta-icon-profile {
+        width: 15px !important;
+        height: 15px !important;
+    }
+}
+
+/* ================== RESPONSIVE END ================== */
