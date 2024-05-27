@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-success">Masuk</button>
+                            <button type="submit" class="btn btn-success">Masuk Laman</button>
                         </div>
 
                     </form>
